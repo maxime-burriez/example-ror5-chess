@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require chessboard.min
+//= require chess.min
 //= require_tree .
