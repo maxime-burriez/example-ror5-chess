@@ -1,3 +1,3 @@
-require "redis"
+require 'redis'
 
-REDIS = Redis.new(Rails.application.config_for("cable"))
+REDIS = Redis.new(Rails.application.config_for('cable'))

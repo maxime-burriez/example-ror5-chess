@@ -26,6 +26,13 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+
+  # Mount Action Cable outside main process or domain
+  # config.action_cable.mount_path = nil
+  # config.action_cable.url = 'wss://example.com/cable'
+  config.action_cable.allowed_request_origins = [ 'http://dinosaur.example-ror5-chess.development.c66.me', /http:\/\/dinosaur\.example-ror5-chess\.development\.c66\.me.*/ ]
+  
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
