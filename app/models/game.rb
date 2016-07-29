@@ -5,8 +5,8 @@ class Game
     ActionCable.server.broadcast "player_#{white}", {action: "game_start", msg: "white"}
     ActionCable.server.broadcast "player_#{black}", {action: "game_start", msg: "black"}
 
-    REDIS.set("opponent_for:#{white}", black)
-    REDIS.set("opponent_for:#{black}", white)
+    ReadCache.redis.set("opponent_for:#{white}", black)
+    ReadCache.redis.set("opponent_for:#{black}", white)
   end
 
   def self.forfeit(uuid)
@@ -16,7 +16,7 @@ class Game
   end
 
   def self.opponent_for(uuid)
-    REDIS.get("opponent_for:#{uuid}")
+    ReadCache.redis.get("opponent_for:#{uuid}")
   end
 
   def self.make_move(uuid, data)
