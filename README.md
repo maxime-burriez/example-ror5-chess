@@ -58,6 +58,7 @@ Give an example
 
 Add this in nginx config (nginx_conf):
 
+```
 http {
   ...
   server {
@@ -73,6 +74,7 @@ http {
     ...
   }
 }
+```
 
 ## Built With
 
